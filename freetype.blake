@@ -1,0 +1,14 @@
+local path = require 'path'
+
+return {
+	type = 'lua_binary_module';
+	files = {
+		dirs={source=path.empty},
+		"compat.c",
+		"freetype.cc",
+	};
+	dependencies = { "freetype" };
+	define = { LUAFREETYPE_API = 'LUAMOD_API' }
+}
+
+-- vi: filetype=lua

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+lang="en">
+<head>
+<title>LuaFreeType @ piratery.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" href="doc.css" type="text/css"/>
+</head>
+<body>
+
+<div class="chapter" id="header">
+<img width="128" height="128" alt="prtr-LuaFreeType" src="logo.png"/>
+<p>A low level binding to the FreeType library</p>
+<p class="bar">
+<a href="index.html">home</a> &middot;
+<a href="index.html#installation">installation</a> &middot;
+<a href="index.html#manual">manual</a>
+</p>
+</div>
+
+<div class="chapter">
+<a id="about"/><h1>1 - About</h1>
+
+<p><a href="http://www.freetype.org/">FreeType</a> is a library to read and rasterize font files. This module is a thin wrapper around FreeType's C API.</p>
+
+<h2>Support</h2>
+
+<p>All support is done through the <a href="http://www.lua.org/lua-l.html">Lua mailing list</a>.</p>
+
+<p>Feel free to ask for further developments. I can't guarantee that I'll develop everything you ask, but I want my code to be as useful as possible, so I'll do my best to help you. You can also send me request or bug reports (for code and documentation) directly at <a href="mailto:jerome.vuarand@gmail.com">jerome.vuarand@gmail.com</a>.</p>
+
+<h2>Credits</h2>
+
+<p>This module is written and maintained by <a href="mailto:jerome.vuarand@gmail.com">Jérôme Vuarand</a>.</p>
+
+<p>It is available under an <a href="LICENSE.txt">MIT-style license</a>.</p>
+
+
+</div>
+
+<div class="chapter">
+<a id="installation"/><h1>2 - Installation</h1>
+
+<p>LuaFreeType sources are available in its <a href="http://hg.piratery.net/luafreetype/">Mercurial repository</a>:</p>
+
+<pre><code>hg clone http://hg.piratery.net/luafreetype/
+</code></pre>
+
+<p>Tarballs of the latest code can be downloaded directly from there: as <a href="http://hg.piratery.net/luafreetype/get/tip.tar.gz">gz</a>, <a href="http://hg.piratery.net/luafreetype/get/tip.tar.bz2">bz2</a> or <a href="http://hg.piratery.net/luafreetype/get/tip.zip">zip</a>.</p>
+
+<p>Finally, I published some rockspecs:</p>
+
+<pre><code>luarocks install freetype
+</code></pre>
+
+</div>
+
+<div class="chapter">
+<a id="manual"/><h1>3 - Manual</h1>
+
+<p>This module is a low level binding to FreeType, so the API stays as close as possible. Basically all FreeType functions with an <code>FT_</code> prefix are functions in the module without the prefix, and arguments and return values are very similar. In other words you should consult the <a href="http://www.freetype.org/freetype2/documentation.html">FreeType documentation</a>, apply some logic to adapt that to Lua, and eventually check this module sources to find peculiarities.</p>
+
+<p>As the API is very similar to the FreeType C API, no detailed documentation will be maintained here. If that proves to be problematic, please let me know, and I'll see if I can improve that.</p>
+
+<p>To use this module:</p>
+
+<pre><code>local FT = require 'freetype'
+</code></pre>
+
+<p>Here I named the module <code>FT</code>, so that you can write <code>FT.New_Library</code> to keep your code similar to C code using the FreeType C API, in this case <code>FT_New_Library</code>. Of course you can name your local whatever you want.</p>
+
+<p>Finally note that this binding is not automatically generated, so it is (very) incomplete so far. Please contact me if something you need is missing.</p>
+
+</div>
+
+<div class="chapter" id="footer">
+<small>Last update: 2014-07-16 23:44:21 BST</small>
+</div>
+
+</body>
+</html>
+
